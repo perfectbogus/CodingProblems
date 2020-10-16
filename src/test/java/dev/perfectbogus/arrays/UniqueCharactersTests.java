@@ -12,20 +12,28 @@ public class UniqueCharactersTests {
     @DisplayName("Repeated Chars")
     public void testRepeatedChar(){
         char[] str = {'h', 'e', 'l', 'l', 'o'};
-        assertFalse(UniqueCharacters.uniqueCharacters(str));
+        assertFalse(UniqueCharacters.isUniqueCharacters(str));
+        String aux = new String(str);
+        assertFalse(UniqueCharacters.isUniqueChar(aux));
     }
 
     @Test
     @DisplayName("No Repeated Chars")
     public void testNoRepeatedChar() {
         char[] str = {'f', 'a', 's', 't'};
-        assertTrue(UniqueCharacters.uniqueCharacters(str));
+        assertTrue(UniqueCharacters.isUniqueCharacters(str));
+        String aux = new String(str);
+        assertTrue(UniqueCharacters.isUniqueChar(aux));
     }
 
     @Test
     @DisplayName("Validate Space Char")
     public void testSpaceChar(){
         char[] str = {'y', 'o', 'u', ' ', 'a', 'r', 'e', ' ', 'f', 'i', 'n', 'e'};
-        assertFalse(UniqueCharacters.uniqueCharacters(str));
+        assertFalse(UniqueCharacters.isUniqueCharacters(str));
+        String aux = new String(str);
+        assertFalse(UniqueCharacters.isUniqueChar(aux));
     }
+
+
 }
