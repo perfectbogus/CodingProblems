@@ -1,0 +1,31 @@
+package dev.perfectbogus.arrays;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class UniqueCharactersTests {
+
+    @Test
+    @DisplayName("Repeated Chars")
+    public void testRepeatedChar(){
+        char[] str = {'h', 'e', 'l', 'l', 'o'};
+        assertFalse(UniqueCharacters.uniqueCharacters(str));
+    }
+
+    @Test
+    @DisplayName("No Repeated Chars")
+    public void testNoRepeatedChar() {
+        char[] str = {'f', 'a', 's', 't'};
+        assertTrue(UniqueCharacters.uniqueCharacters(str));
+    }
+
+    @Test
+    @DisplayName("Validate Space Char")
+    public void testSpaceChar(){
+        char[] str = {'y', 'o', 'u', ' ', 'a', 'r', 'e', ' ', 'f', 'i', 'n', 'e'};
+        assertFalse(UniqueCharacters.uniqueCharacters(str));
+    }
+}
