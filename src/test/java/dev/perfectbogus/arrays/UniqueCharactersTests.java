@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class UniqueCharactersTests {
 
     @Test
-    @DisplayName("Repeated Chars")
     public void testRepeatedChar(){
         char[] str = {'h', 'e', 'l', 'l', 'o'};
         assertFalse(UniqueCharacters.isUniqueCharacters(str));
@@ -18,7 +17,6 @@ public class UniqueCharactersTests {
     }
 
     @Test
-    @DisplayName("No Repeated Chars")
     public void testNoRepeatedChar() {
         char[] str = {'f', 'a', 's', 't'};
         assertTrue(UniqueCharacters.isUniqueCharacters(str));
@@ -27,7 +25,6 @@ public class UniqueCharactersTests {
     }
 
     @Test
-    @DisplayName("Validate Space Char")
     public void testSpaceChar(){
         char[] str = {'y', 'o', 'u', ' ', 'a', 'r', 'e', ' ', 'f', 'i', 'n', 'e'};
         assertFalse(UniqueCharacters.isUniqueCharacters(str));
