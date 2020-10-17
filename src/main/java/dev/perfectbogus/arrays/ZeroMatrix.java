@@ -10,7 +10,6 @@ public class ZeroMatrix {
     }
 
     public static void Zeros(int[][] matrix){
-        System.out.println();
         boolean[] columns = new boolean[matrix.length];
         boolean[] rows = new boolean[matrix[0].length];
 
