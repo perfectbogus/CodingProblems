@@ -28,7 +28,7 @@ public class LinkedListNode {
         //Case A: the kay is in the head node
         if (currentNode != null && currentNode.getData().equals(key)) {
             this.head = currentNode.getNext();
-        }else {
+        } else {
             //Case B: the key is somewhere else
             while (currentNode != null && !currentNode.getData().equals(key)) {
                 previous = currentNode;
@@ -48,7 +48,7 @@ public class LinkedListNode {
             auxStr.append("\"").append(auxNode.getData()).append("\", ");
             auxNode = auxNode.getNext();
         }
-        if(auxStr.length() > 1) {
+        if (auxStr.length() > 1) {
             auxStr = auxStr.delete(auxStr.length() - 2, auxStr.length());
         }
         auxStr.append("]");

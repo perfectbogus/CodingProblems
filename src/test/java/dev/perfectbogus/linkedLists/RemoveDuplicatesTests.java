@@ -8,11 +8,11 @@ public class RemoveDuplicatesTests {
 
     @Test
     public void areDuplicates(){
-        LinkedList<String> data = new LinkedList();
-        data.add("hello");
-        data.add("world");
-        data.add("hello");
-        RemoveDuplicates.removeDuplicates(data);
+        LinkedListNode list = new LinkedListNode();
+        list.insert("hello");
+        list.insert("world");
+        list.insert("hello");
+        RemoveDuplicates.removeDuplicates(list);
 
     }
 

@@ -17,16 +17,10 @@ public class RemoveDuplicates {
      * Follow up:
      *  How would you solve this problem if a temporary buffer is not allowed.
      */
-    public static void removeDuplicates(LinkedList<String> n){
+    public static void removeDuplicates(LinkedListNode n){
         HashSet<Integer> set = new HashSet<>();
-        LinkedList<String> previous = null;
-        ListIterator<String> listIterator = n.listIterator();
-        while( listIterator.hasNext() ){
-            String nextStr = listIterator.next();
-            if(set.contains(nextStr)){
+        LinkedListNode previous = null;
 
-            }
-        }
     }
 
 }
