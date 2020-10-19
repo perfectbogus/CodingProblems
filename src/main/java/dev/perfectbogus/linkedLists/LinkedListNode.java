@@ -10,6 +10,19 @@ public class LinkedListNode {
         this.size = 0;
     }
 
+    public LinkedListNode(Node head){
+        if(head == null){
+            new NullPointerException();
+        } else {
+            this.head = head;
+            Node current = head;
+            while(current != null){
+                current = current.getNext();
+                this.size++;
+            }
+        }
+    }
+
     public int getSize(){
         return this.size;
     }
