@@ -3,9 +3,15 @@ package dev.perfectbogus.linkedLists;
 public class LinkedListNode {
 
     private Node head;
+    private int size;
 
     public LinkedListNode() {
         this.head = null;
+        this.size = 0;
+    }
+
+    public int getSize(){
+        return this.size;
     }
 
     public Node getHead(){
@@ -23,6 +29,7 @@ public class LinkedListNode {
             }
             last.setNext(newNode);
         }
+        this.size++;
     }
 
     public void remove(String key) {
@@ -32,13 +39,14 @@ public class LinkedListNode {
         //Case A: the kay is in the head node
         if (currentNode != null && currentNode.getData().equals(key)) {
             this.head = currentNode.getNext();
+            this.size--;
         } else {
             //Case B: the key is somewhere else
             while (currentNode != null && !currentNode.getData().equals(key)) {
                 previous = currentNode;
                 currentNode = currentNode.getNext();
+                this.size--;
             }
-
             if (currentNode == null) {
                 previous.setNext(currentNode.getNext());
             }
@@ -53,7 +61,7 @@ public class LinkedListNode {
             auxNode = auxNode.getNext();
         }
         if (auxStr.length() > 1) {
-            auxStr = auxStr.delete(auxStr.length() - 2, auxStr.length());
+            auxStr.delete(auxStr.length() - 2, auxStr.length());
         }
         auxStr.append("]");
         return auxStr.toString();

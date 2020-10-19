@@ -23,7 +23,7 @@ public class RemoveDuplicates {
      * <p>
      * Follow up:
      * How would you solve this problem if a temporary buffer is not allowed.
-     * <p>
+     * <p>i
      * Assumptions:
      * Remove all concurrences or only the first appear
      * Solution with Buffer.

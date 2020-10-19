@@ -2,6 +2,8 @@ package dev.perfectbogus.linkedLists;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class LinkedListNodeTests {
 
     @Test
@@ -19,5 +21,22 @@ public class LinkedListNodeTests {
 
         list.remove("world");
         System.out.println(list.toString());
+    }
+
+    @Test
+    public void testSizeLinkedList(){
+        LinkedListNode list = new LinkedListNode();
+        assertEquals(list.getSize(), 0);
+
+        list.insert("hola");
+        assertEquals(list.getSize(), 1 );
+
+        list.insert("world");
+        assertEquals(list.getSize(), 2);
+
+        list.remove("hola");
+        assertEquals(list.getSize(), 1);
+
+
     }
 }
