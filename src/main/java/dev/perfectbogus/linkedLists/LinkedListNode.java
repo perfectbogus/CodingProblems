@@ -8,6 +8,10 @@ public class LinkedListNode {
         this.head = null;
     }
 
+    public Node getHead(){
+        return this.head;
+    }
+
     public void insert(String data) {
         Node newNode = new Node(data);
         if (this.head == null) {
