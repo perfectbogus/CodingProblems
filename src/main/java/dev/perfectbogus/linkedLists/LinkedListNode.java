@@ -23,6 +23,21 @@ public class LinkedListNode {
         }
     }
 
+    public Node getNthElement(int kthElement){
+        if(kthElement > 1 && kthElement < this.size){
+            Node currentNode = this.head;
+            while(currentNode != null){
+                kthElement--;
+                if(kthElement == 0){
+                    return currentNode;
+                } else {
+                    currentNode = currentNode.getNext();
+                }
+            }
+        }
+        return new Node();
+    }
+
     public int getSize(){
         return this.size;
     }

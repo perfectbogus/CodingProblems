@@ -3,7 +3,6 @@ package dev.perfectbogus.arrays;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class URLifyTests{
 
@@ -11,15 +10,15 @@ public class URLifyTests{
 	public void testNoSpaces(){
 		char[] before = {'n', 'a', 'm', 'e'};
 		char[] after = {'n', 'a', 'm', 'e'};
-		URLify.replaceSpaces(before, 4);
-		assertArrayEquals(before,after);
+		char[] processed = URLify.replaceSpaces(before, 4);
+		assertArrayEquals(processed,after);
 	}
 
 	@Test
 	public void testSpace(){
 		char[] before = {'n', 'a', ' ', 'm', 'e', ' ', ' ', ' '};
 		char[] after = {'n', 'a', '%', '2', '0', 'm', 'e', ' '};
-		URLify.replaceSpaces(before, 5);
-		assertArrayEquals(before, after);
+		char[] processed = URLify.replaceSpaces(before, 5);
+		assertArrayEquals(processed, after);
 	}
 }

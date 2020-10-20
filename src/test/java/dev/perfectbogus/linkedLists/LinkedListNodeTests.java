@@ -1,10 +1,23 @@
 package dev.perfectbogus.linkedLists;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LinkedListNodeTests {
+
+    private LinkedListNode list;
+
+    @BeforeAll
+    public void fillTheList(){
+        list = new LinkedListNode();
+        list.insert("hola");
+        list.insert("world");
+        list.insert("peace");
+        list.insert("hola");
+        list.insert("war");
+    }
 
     @Test
     public void testInsert(){
@@ -36,7 +49,11 @@ public class LinkedListNodeTests {
 
         list.remove("hola");
         assertEquals(list.getSize(), 1);
+    }
 
-
+    @Test
+    public void testGetKthElement(){
+        Node element = list.getNthElement(2);
+        assertEquals(element.getData(), "world");
     }
 }

@@ -1,16 +1,17 @@
 package dev.perfectbogus.linkedLists;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class KthtoLastTests {
 
-    private LinkedListNode list;
+    private static LinkedListNode list;
     private String resultStr;
-    @BeforeAll
-    public void fillTheList(){
+
+    @BeforeEach
+    public void setup(){
         list = new LinkedListNode();
         list.insert("hola");
         list.insert("world");
@@ -42,6 +43,6 @@ public class KthtoLastTests {
     @Test
     public void testNoValidCaseRecursive(){
         LinkedListNode result = KthtoLast.getKthtoLastElementRecursive(list, 6);
-        assertEquals(result.toString(), resultStr);
+        assertEquals(result.toString(), "[]");
     }
 }
