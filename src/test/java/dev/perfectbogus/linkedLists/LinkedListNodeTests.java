@@ -1,6 +1,7 @@
 package dev.perfectbogus.linkedLists;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,8 +10,8 @@ public class LinkedListNodeTests {
 
     private LinkedListNode list;
 
-    @BeforeAll
-    public void fillTheList(){
+    @BeforeEach
+    public void setup(){
         list = new LinkedListNode();
         list.insert("hola");
         list.insert("world");
