@@ -23,8 +23,26 @@ public class LinkedListNode {
         }
     }
 
+    /**
+     * TODO: Create another way to nullify this node
+     * Bug: Due to I am using a value instead of reference,
+     * I cannot nullify the node on this way
+      */
+    public void deleteMiddleNode(Node middleNode){
+        Node nextNode = middleNode.getNext();
+        if(nextNode == null){
+            middleNode.setNext(null);
+            middleNode.setData(null);
+            middleNode = null;
+        } else {
+            middleNode.setData(nextNode.getData());
+            middleNode.setNext(nextNode.getNext());
+        }
+        this.size--;
+    }
+
     public Node getNthElement(int kthElement){
-        if(kthElement > 1 && kthElement < this.size){
+        if(kthElement >= 1 && kthElement <= this.size ){
             Node currentNode = this.head;
             while(currentNode != null){
                 kthElement--;
