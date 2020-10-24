@@ -31,6 +31,7 @@ public class LinkedListNode {
     public void deleteMiddleNode(Node middleNode){
         Node nextNode = middleNode.getNext();
         if(nextNode == null){
+            //Here cannot be null due to it is passing value and not reference
             middleNode.setNext(null);
             middleNode.setData(null);
             middleNode = null;
