@@ -25,6 +25,16 @@ public class SumList {
 
     }
 
+    /**
+     * Solution:
+     * try to add every single digit with the corresponding on the other list and get
+     * consideration over the carry when the result is more than 10
+     *
+     * things I learned:
+     * if something is getting complicated or complex stop, and try another
+     * approach, sometimes the solution just to be simple without any complication
+     *
+     */
     public static BookLinkedListNode addLists(BookLinkedListNode aList, BookLinkedListNode bList, int carry) {
         if (aList == null && bList == null && carry == 0) {
             return null;
