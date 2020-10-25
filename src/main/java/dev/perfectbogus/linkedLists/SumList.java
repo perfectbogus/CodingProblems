@@ -4,7 +4,7 @@ import dev.perfectbogus.linkedLists.Partition.BookLinkedListNode;
 
 public class SumList {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         BookLinkedListNode aHeadList = new BookLinkedListNode(7);
 
         BookLinkedListNode aListB = new BookLinkedListNode(1);
@@ -21,41 +21,30 @@ public class SumList {
         BookLinkedListNode bListC = new BookLinkedListNode(5);
         bListB.next = bListC;
 
-        System.out.println(getSize(aHeadList));
-        System.out.println(getSum(aHeadList));
-
+        BookLinkedListNode result = addLists(aHeadList, bHeadList, 0);
 
     }
 
-    public static double sumLists(BookLinkedListNode aList, BookLinkedListNode bList){
-        //get size of each lists
-        int aListSize = getSize(aList);
-        int bListSize = getSize(bList);
-        double aSumList = getSum(aList);
-        double bSumList = getSum(bList);
-        //
-
-        return 0;
-    }
-
-    public static double getSum(BookLinkedListNode list){
-        int i = 0;
-        double sum = 0;
-        while(list != null){
-            sum += list.data * Math.pow(10, i++);
-            list = list.next;
+    public static BookLinkedListNode addLists(BookLinkedListNode aList, BookLinkedListNode bList, int carry) {
+        if (aList == null && bList == null && carry == 0) {
+            return null;
         }
-        return sum;
-    }
-
-    public static int getSize(BookLinkedListNode list){
-        int i = 0;
-        while(list != null){
-            i++;
-            list = list.next;
+        BookLinkedListNode result = new BookLinkedListNode();
+        int value = carry;
+        if (aList != null) {
+            value += aList.data;
         }
-        return i;
-    }
+        if (bList != null) {
+            value += bList.data;
+        }
 
+        result.data = value % 10;
+
+        if (aList != null || bList != null) {
+            BookLinkedListNode more = addLists(aList == null ? null : aList.next, bList == null ? null : bList.next, value >= 10 ? 1 : 0);
+            result.setNext(more);
+        }
+        return result;
+    }
 
 }

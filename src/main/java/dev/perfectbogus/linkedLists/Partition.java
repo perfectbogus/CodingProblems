@@ -77,5 +77,19 @@ public class Partition {
             this.data = data;
             this.next = next;
         }
+
+        public void setNext(BookLinkedListNode node){
+            this.next = node;
+        }
+
+        public String toString(){
+            BookLinkedListNode aux = this;
+            StringBuilder str = new StringBuilder();
+            while(aux != null){
+                str.append(aux.data).append(" ");
+                aux = aux.next;
+            }
+            return str.toString();
+        }
     }
 }
