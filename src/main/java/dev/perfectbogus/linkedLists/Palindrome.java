@@ -2,6 +2,8 @@ package dev.perfectbogus.linkedLists;
 
 import dev.perfectbogus.linkedLists.Partition.BookLinkedListNode;
 
+import java.util.Stack;
+
 public class Palindrome {
 
     public static void main(String[] args){
@@ -19,6 +21,32 @@ public class Palindrome {
 
         System.out.println(isPalindrome(aList));
     }
+
+    public static boolean isAnotherPalindrome(BookLinkedListNode head){
+        BookLinkedListNode fast = head;
+        BookLinkedListNode slow = head;
+
+        Stack<Integer> stack = new Stack<>();
+        while (fast != null && fast.next != null){
+            stack.push(slow.data);
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        if (fast != null){
+            slow = slow.next;
+        }
+
+        while (slow != null){
+            int top = stack.pop().intValue();
+            if (top != slow.data){
+                return false;
+            }
+            slow = slow.next;
+        }
+        return true;
+    }
+
 
     public static boolean isPalindrome(BookLinkedListNode head){
         BookLinkedListNode reversed = reverseAndClone(head);
