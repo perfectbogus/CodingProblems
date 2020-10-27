@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class Palindrome {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         BookLinkedListNode aList;
 
         aList = new BookLinkedListNode(0);
@@ -19,27 +19,29 @@ public class Palindrome {
         BookLinkedListNode aListE = new BookLinkedListNode(0);
         aListD.next = aListE;
 
-        System.out.println(isPalindrome(aList));
+        //System.out.println(isPalindrome(aList));
+        //System.out.println(isAnotherPalindrome(aList));
+        System.out.println(isPalindromeWrapper(aList));
     }
 
-    public static boolean isAnotherPalindrome(BookLinkedListNode head){
+    public static boolean isAnotherPalindrome(BookLinkedListNode head) {
         BookLinkedListNode fast = head;
         BookLinkedListNode slow = head;
 
         Stack<Integer> stack = new Stack<>();
-        while (fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             stack.push(slow.data);
             slow = slow.next;
             fast = fast.next.next;
         }
 
-        if (fast != null){
+        if (fast != null) {
             slow = slow.next;
         }
 
-        while (slow != null){
-            int top = stack.pop().intValue();
-            if (top != slow.data){
+        while (slow != null) {
+            int top = stack.pop();
+            if (top != slow.data) {
                 return false;
             }
             slow = slow.next;
@@ -47,15 +49,60 @@ public class Palindrome {
         return true;
     }
 
+    //Just to create the recursive algorithm is needed create this
+    //intermediate class in order to keep the information between call on call.
+    static class Result {
+        BookLinkedListNode node;
+        boolean result;
 
-    public static boolean isPalindrome(BookLinkedListNode head){
+        public Result(BookLinkedListNode node, boolean result) {
+            this.node = node;
+            this.result = result;
+        }
+    }
+
+    public static boolean isPalindromeWrapper(BookLinkedListNode head) {
+        int length = lengthOfList(head);
+        Result p = isPalindromeRecursive(head, length);
+        return p.result;
+    }
+
+    public static Result isPalindromeRecursive(BookLinkedListNode head, int length) {
+        if (head == null || length <= 0) {
+            return new Result(head, true);
+        } else if (length == 1) {// odd size of the list
+            return new Result(head.next, true);
+        }
+        Result res = isPalindromeRecursive(head.next, length - 2);
+
+        if (!res.result || res.node == null) {
+            return res;
+        }
+
+        res.result = (head.data == res.node.data);
+
+        res.node = res.node.next;
+
+        return res;
+    }
+
+    public static int lengthOfList(BookLinkedListNode node) {
+        int size = 0;
+        while (node != null) {
+            node = node.next;
+            size++;
+        }
+        return size;
+    }
+
+    public static boolean isPalindrome(BookLinkedListNode head) {
         BookLinkedListNode reversed = reverseAndClone(head);
         return isEqual(head, reversed);
     }
 
-    public static BookLinkedListNode reverseAndClone(BookLinkedListNode node){
+    public static BookLinkedListNode reverseAndClone(BookLinkedListNode node) {
         BookLinkedListNode head = null;
-        while (node != null ) {
+        while (node != null) {
             BookLinkedListNode n = new BookLinkedListNode(node.data);
             n.next = head;
             head = n;
@@ -64,9 +111,9 @@ public class Palindrome {
         return head;
     }
 
-    public static boolean isEqual(BookLinkedListNode one, BookLinkedListNode two){
-        while (one != null && two != null ){
-            if ( one.data != two.data ){
+    public static boolean isEqual(BookLinkedListNode one, BookLinkedListNode two) {
+        while (one != null && two != null) {
+            if (one.data != two.data) {
                 return false;
             }
             one = one.next;
