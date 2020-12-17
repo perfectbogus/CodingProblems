@@ -5,9 +5,7 @@ import dev.perfectbogus.linkedLists.Partition.BookLinkedListNode;
 public class LoopDetection {
 
     public static void main(String[] args) {
-        BookLinkedListNode aList;
-
-        aList = new BookLinkedListNode(0);
+        BookLinkedListNode aList = new BookLinkedListNode(0);
         BookLinkedListNode aListB = new BookLinkedListNode(1);
         aList.next = aListB;
         BookLinkedListNode aListC = new BookLinkedListNode(2);
@@ -16,8 +14,8 @@ public class LoopDetection {
         aListC.next = aListD;
         BookLinkedListNode aListE = new BookLinkedListNode(4);
         aListD.next = aListE;
+        aListE.next = aListC;
 
-        aListE.next = aListD;
         System.out.println(loopDetection(aList).toString());
     }
 
