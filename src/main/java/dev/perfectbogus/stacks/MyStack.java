@@ -30,7 +30,7 @@ public class MyStack<T> {
     }
 
     public T peek(){
-        if (top == null ) throw new EmptyStackException;
+        if (top == null ) throw new EmptyStackException();
         return top.data;
     }
 
