@@ -20,12 +20,14 @@ public class DeleteMiddleNodeTests {
         list.insert("war");
     }
 
-    @Test void testGetNthNode(){
+    @Test
+    public void testGetNthNode(){
         Node result = list.getNthElement(2);
         assertEquals(result.getData(), "world");
     }
 
-    @Test void testGetNthNodeInvalid(){
+    @Test
+    public void testGetNthNodeInvalid(){
         Node result = list.getNthElement(6);
         assertNull(result.getData());
         assertNull(result.getNext());
