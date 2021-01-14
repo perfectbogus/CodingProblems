@@ -27,4 +27,17 @@ public class SortStackTests {
             peekData = nextData;
         }
     }
+
+    @Test
+    public void bookSolution(){
+        Stack<Integer> myStack = new Stack<>();
+
+        myStack.push(5);
+        myStack.push(30);
+        myStack.push(10);
+        myStack.push(18);
+        myStack.push(3);
+
+        SortStack.sorting(myStack);
+    }
 }

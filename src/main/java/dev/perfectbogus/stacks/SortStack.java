@@ -29,11 +29,11 @@ public class SortStack {
                     swapStack.push(data);
                 } else {
                     int indexPopped = 0;
-                    while (peekData > data){
+                    while (peekData > data) {
                         peekData = swapStack.pop();
                         inputStack.push(peekData);
                         indexPopped++;
-                        if (swapStack.size() > 0){
+                        if (swapStack.size() > 0) {
                             peekData = swapStack.peek();
                         } else {
                             break;
@@ -48,9 +48,24 @@ public class SortStack {
                 }
             }
         }
-        while(!swapStack.isEmpty()){
+        while (!swapStack.isEmpty()) {
             int tempData = swapStack.pop();
             inputStack.push(tempData);
+        }
+    }
+
+    public static void sorting(Stack<Integer> s) {
+        Stack<Integer> r = new Stack<>();
+        while (!s.isEmpty()) {
+            int tmp = s.pop();
+            while(!r.isEmpty() && r.peek() > tmp){
+                s.push(r.pop());
+            }
+            r.push(tmp);
+        }
+
+        while(!r.isEmpty()) {
+            s.push(r.pop());
         }
     }
 
