@@ -13,6 +13,10 @@ import java.util.Stack;
  * pop the element on the input stack after that use the second stack to store that value
  * after that pop the next element and compare with the first value of the other stack
  * if
+ *
+ * Lalos future:
+ * when you notice that a solution started into complex code, just change the approach
+ * maybe there is a easy way to solve the problem
  */
 
 public class SortStack {
