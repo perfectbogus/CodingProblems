@@ -4,13 +4,11 @@ public class BinaryTree<T> {
 
     private NodeBT<T> root;
 
-    public BinaryTree(NodeBT<T> root) {
-        this.root = root;
+    public BinaryTree() {
+        this.root = new NodeBT<T>();
     }
 
-    private void printInOrderTraversal(){
-        if (root != null){
-
-        }
+    public NodeBT<T> getRoot() {
+        return root;
     }
 }
