@@ -23,7 +23,6 @@ public class Traversal {
             postOrder(node.getLeft());
             postOrder(node.getRight());
             System.out.println(node.getData().toString());
-
         }
     }
 }
