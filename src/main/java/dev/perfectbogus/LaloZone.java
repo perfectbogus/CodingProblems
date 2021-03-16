@@ -7,7 +7,7 @@ import java.util.Stack;
 
 public class LaloZone {
 
-    public static void main(String []args){
+    public static void main(String[] args) {
 
         MyQueue<Character> myQueue = new MyQueue<>();
 
@@ -18,6 +18,19 @@ public class LaloZone {
         myQueue.pop();
         myQueue.pop();
 
+        Animal a = new Dog();
+        a.eat();
+    }
 
+    static class Animal {
+        void eat() {
+            System.out.println("animal is eating...");
+        }
+    }
+
+    static class Dog extends Animal {
+        void eat() {
+            System.out.println("dog is eating...");
+        }
     }
 }

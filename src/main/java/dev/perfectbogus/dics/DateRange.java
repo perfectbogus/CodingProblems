@@ -6,8 +6,8 @@ import java.util.Set;
 
 public class DateRange {
 
-    public static void main(String args[]) {
-        int dataSet[][] = {{1900, 1905}
+    public static void main(String[] args) {
+        int[][] dataSet = {{1900, 1905}
                 , {1904, 1910}
                 , {1909, 1915}
                 , {1904, 1910}
@@ -15,7 +15,7 @@ public class DateRange {
                 , {1910, 1915}
                 , {1900, 1906}};
 
-        int year[][] = getYear(dataSet);
+        int[][] year = getYear(dataSet);
         System.out.println("Year:" + year[0][0]);
         System.out.println("Lived People: " + year[0][1]);
     }
