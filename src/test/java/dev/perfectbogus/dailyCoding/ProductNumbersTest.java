@@ -15,10 +15,10 @@ class ProductNumbersTest {
         int[] input = { 1, 2, 3, 4, 5};
         int[] output = {120, 60, 40, 30, 24};
 
-        int[] res = ProductNumbers.simpleSolution(input);
+        int[] res = ProductNumbers.nonDivisionSolution(input);
         assertArrayEquals(output, res);
 
-        int[] r = ProductNumbers.anotherSolution(input);
+        int[] r = ProductNumbers.divisionSolution(input);
         assertArrayEquals(output, r);
     }
 
@@ -30,10 +30,10 @@ class ProductNumbersTest {
         int[] input = {3, 2, 1};
         int[] output = {2 , 3, 6};
 
-        int[] res = ProductNumbers.simpleSolution(input);
+        int[] res = ProductNumbers.nonDivisionSolution(input);
         assertArrayEquals(output, res);
 
-        int[] r = ProductNumbers.anotherSolution(input);
+        int[] r = ProductNumbers.divisionSolution(input);
         assertArrayEquals(output, r);
     }
 }

@@ -11,7 +11,7 @@ package dev.perfectbogus.dailyCoding;
  */
 public class ProductNumbers {
 
-    public static int[] simpleSolution(int[] data){
+    public static int[] nonDivisionSolution(int[] data){
         int[] output = new int[data.length];
         for(int i = 0; i < data.length; i++){
             int sum = 0;
@@ -29,7 +29,7 @@ public class ProductNumbers {
         return output;
     }
 
-    public static int[] anotherSolution(int[] data){
+    public static int[] divisionSolution(int[] data){
         int[] out = new int[data.length];
         for (int i = 0; i < data.length; i++){
             int prev = data[i];
