@@ -1,5 +1,6 @@
 package dev.perfectbogus.dailyCoding.NumbersOnList;
 
+import java.util.HashSet;
 import java.util.List;
 
 public class NumbersOnList {
@@ -19,6 +20,18 @@ public class NumbersOnList {
                 if( list.get(pivote) + list.get(next) == k){
                     return true;
                 }
+            }
+        }
+        return false;
+    }
+
+    public static boolean fastestSolution(int k, List<Integer> list){
+        HashSet<Integer> hashSet = new HashSet<>();
+        for (Integer x : list) {
+            if (hashSet.contains(k - x)) {
+                return true;
+            } else {
+                hashSet.add(x);
             }
         }
         return false;

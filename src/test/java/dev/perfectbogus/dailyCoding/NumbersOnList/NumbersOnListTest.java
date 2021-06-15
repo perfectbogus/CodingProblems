@@ -16,6 +16,9 @@ class NumbersOnListTest {
 
         boolean res = NumbersOnList.simpleSolution(k, list);
         assertTrue(res);
+
+        boolean r = NumbersOnList.fastestSolution(k, list);
+        assertTrue(r);
     }
 
     @Test
@@ -25,6 +28,9 @@ class NumbersOnListTest {
 
         boolean res = NumbersOnList.simpleSolution(k, list);
         assertFalse(res);
+
+        boolean r = NumbersOnList.fastestSolution(k, list);
+        assertFalse(r);
     }
 
     @Test
@@ -34,6 +40,9 @@ class NumbersOnListTest {
 
         boolean res = NumbersOnList.simpleSolution(k, list);
         assertFalse(res);
+
+        boolean r = NumbersOnList.fastestSolution(k, list);
+        assertFalse(r);
     }
 
 }
