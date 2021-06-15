@@ -10,7 +10,6 @@ public class StairsProblem {
     }
 
     public static int stairCase(int n, List<Integer> list){
-        System.out.println(n);
         if( n < 0 ) {
             return 0;
         } else if ( n == 0 ){
