@@ -2,8 +2,7 @@ package dev.perfectbogus;
 
 import dev.perfectbogus.stacks.MyQueue;
 
-import java.util.Iterator;
-import java.util.Stack;
+import java.util.*;
 
 public class LaloZone {
 
@@ -20,6 +19,8 @@ public class LaloZone {
 
         Animal a = new Dog();
         a.eat();
+
+        Map<String, Integer> map = new Hashtable<>();
     }
 
     static class Animal {
