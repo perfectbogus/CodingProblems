@@ -29,18 +29,51 @@ public class UniversalValueTree {
 
         int count = countUnivalSubtrees(root);
         System.out.println(count);
+
+        int rest = countUnivalSubtreesN(root);
+        System.out.println(rest);
     }
 
-    public static boolean univalHelper(Node root, int value){
-        if(root == null){
-            return true;
-        }
-        if (root.value == value){
-            return univalHelper(root.left, value) && univalHelper(root.right, value);
-        }
-        return false;
+    public static int countUnivalSubtreesN(Node node){
+        return helper(node).count;
     }
 
+    public static Tuple helper(Node node){
+        if( node == null){
+            return new Tuple(0, true);
+        }
+        Tuple left = helper(node.left);
+        Tuple right = helper(node.right);
+        int total_counts = left.count + right.count;
+        if( left.isUnival && right.isUnival){
+            if(node.left != null && node.value != node.left.value){
+                return new Tuple(total_counts, false);
+            }
+            if(node.right != null && node.value != node.right.value){
+                return new Tuple(total_counts, false);
+            }
+            return new Tuple(total_counts + 1, true);
+        } else {
+            return new Tuple(total_counts, false);
+        }
+    }
+
+    public static class Tuple {
+
+        public int count;
+        public boolean isUnival;
+
+        public Tuple(int count, boolean isUnival){
+            this.count = count;
+            this.isUnival = isUnival;
+        }
+    }
+
+    /**
+     * -------------------------------n^2 solution -------------------------------
+     * @param root
+     * @return
+     */
     public static int countUnivalSubtrees(Node root){
         if( root == null){
             return 0;
@@ -52,6 +85,16 @@ public class UniversalValueTree {
         } else {
             return left + right;
         }
+    }
+
+    public static boolean univalHelper(Node node, int rootValue){
+        if(node == null){
+            return true;
+        }
+        if (node.value == rootValue){
+            return univalHelper(node.left, rootValue) && univalHelper(node.right, rootValue);
+        }
+        return false;
     }
 
     public static boolean isUnival(Node root){
