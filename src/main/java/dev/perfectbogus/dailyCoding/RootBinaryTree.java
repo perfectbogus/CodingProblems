@@ -11,6 +11,8 @@ public class RootBinaryTree {
      * the tree.
      *
      * For example, given the following Node class
+     *
+     * The best is the enemy of the good
      */
     public static void main(String[] args){
         Node<Integer> root = new Node<>(1, new Node<>(2, new Node<>(3 , null, null), null), new Node<>(3, null, null));
