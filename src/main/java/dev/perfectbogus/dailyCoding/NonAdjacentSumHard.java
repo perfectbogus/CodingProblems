@@ -63,7 +63,7 @@ public class NonAdjacentSumHard {
         int s2 = Math.max(Integer.MIN_VALUE, arr[0]);
         int s1 = Math.max(s2, arr[1]);
         for(int k = 2; k < arr.length; k++){
-             int s0 = Math.max(s1, s2 + arr[k]);
+            int s0 = Math.max(s1, s2 + arr[k]);
             s2 = s1;
             s1 = s0;
         }
