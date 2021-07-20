@@ -8,6 +8,10 @@ public class Customer {
         this.name = name;
     }
 
+    public Customer(Customer oldCustomer){
+        this.name = oldCustomer.name;
+    }
+
     public String getName(){
         return this.name;
     }

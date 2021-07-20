@@ -23,6 +23,10 @@ public class CustomerRecords implements Iterable<Customer>{
         return Collections.unmodifiableMap(this.records);
     }
 
+    public Customer getCustomerByName(String name){
+        return new Customer(this.records.get(name));
+    }
+
     @NotNull
     @Override
     public Iterator<Customer> iterator() {
