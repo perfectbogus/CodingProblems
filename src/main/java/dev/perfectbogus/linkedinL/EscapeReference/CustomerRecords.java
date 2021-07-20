@@ -2,6 +2,7 @@ package dev.perfectbogus.linkedinL.EscapeReference;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -19,7 +20,7 @@ public class CustomerRecords implements Iterable<Customer>{
     }
 
     public Map<String, Customer> getCustomer(){
-        return new HashMap<>(this.records);
+        return Collections.unmodifiableMap(this.records);
     }
 
     @NotNull
