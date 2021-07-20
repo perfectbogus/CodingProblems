@@ -1,6 +1,6 @@
 package dev.perfectbogus.linkedinL.EscapeReference;
 
-public class Customer {
+public class Customer implements CustomerReadOnly {
 
     private String name;
 
@@ -12,10 +12,12 @@ public class Customer {
         this.name = oldCustomer.name;
     }
 
+    @Override
     public String getName(){
         return this.name;
     }
 
+    @Override
     public String toString(){
         return this.name;
     }

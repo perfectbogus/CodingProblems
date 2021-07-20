@@ -19,7 +19,7 @@ public class Main {
             System.out.println(next);
         }
 
-        Customer anotherCustomer = records.getCustomerByName("John");
+        CustomerReadOnly anotherCustomer = records.getCustomerByName("John");
         System.out.println(anotherCustomer.getName());
     }
 }

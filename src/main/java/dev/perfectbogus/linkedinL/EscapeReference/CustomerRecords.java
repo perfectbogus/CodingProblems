@@ -23,7 +23,7 @@ public class CustomerRecords implements Iterable<Customer>{
         return Collections.unmodifiableMap(this.records);
     }
 
-    public Customer getCustomerByName(String name){
+    public CustomerReadOnly getCustomerByName(String name){
         return new Customer(this.records.get(name));
     }
 
