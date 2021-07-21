@@ -22,6 +22,14 @@ public class CustomerManager {
 		//should do:
 		//customers.remove(0);
 		return customers.get(0);
+		/**
+		 * 		Customer result = null;
+		 * 		synchronized (this) {
+		 * 			if( customers.size() > 0){
+		 * 				result = customers.remove(0);
+		 *                        }* 		}
+		 * 		return result;
+		 */
 	}
 
 	public void howManyCustomers() {
