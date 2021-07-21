@@ -5,7 +5,7 @@ import java.util.List;
 
 public class BookCollection {
 	
-	private List<Book> books;
+	private final List<Book> books;
 	
 	public BookCollection() {
 		 books = new ArrayList<Book>();
@@ -20,8 +20,9 @@ public class BookCollection {
 		 books.add(new Book(9,"Frankenstein","Mary Shelley",7.60));
 		 books.add(new Book(10,"The Count of Monte Christo","Alexandre Dumas",3.99));
 	}
-	
-	public Book findBookByName(String title) {
+
+	// TODO: there is a escaping reference
+	public BookReadOnly findBookByName(String title) {
 		for (Book book : books) {
 			if (book.getTitle().equals(title)) {
 				return book;
