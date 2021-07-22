@@ -1,9 +1,7 @@
 package dev.perfectbogus.exceptions;
 
-import dev.perfectbogus.abstraction.calculus.Calculate;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculateExceptionTest {
 
