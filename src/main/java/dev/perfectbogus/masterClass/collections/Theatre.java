@@ -22,11 +22,15 @@ public class Theatre {
         }
     }
 
+    public List<Seat> getSeats() {
+        return this.seats;
+    }
+
     public String getName(){
         return name;
     }
 
-    public boolean reserveSeat(String seatNumber) {
+    private boolean reserveSeat(String seatNumber) {
         int low = 0;
         int high = seats.size() - 1;
 
@@ -46,7 +50,7 @@ public class Theatre {
         return false;
     }
 
-    private class Seat implements Comparable<Seat> {
+    public class Seat implements Comparable<Seat> {
         private final String seatNumber;
         private boolean reserved = false;
 
