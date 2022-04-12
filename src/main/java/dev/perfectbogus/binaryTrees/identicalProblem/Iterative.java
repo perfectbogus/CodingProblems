@@ -1,5 +1,7 @@
 package dev.perfectbogus.binaryTrees.identicalProblem;
 
+import dev.perfectbogus.binaryTrees.Node;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 

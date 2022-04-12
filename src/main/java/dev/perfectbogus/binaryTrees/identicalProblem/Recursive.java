@@ -1,5 +1,7 @@
 package dev.perfectbogus.binaryTrees.identicalProblem;
 
+import dev.perfectbogus.binaryTrees.Node;
+
 public class Recursive extends Solution {
 
     @Override

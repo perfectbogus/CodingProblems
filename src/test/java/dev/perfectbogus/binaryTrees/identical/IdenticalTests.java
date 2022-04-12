@@ -1,7 +1,7 @@
 package dev.perfectbogus.binaryTrees.identical;
 
 import dev.perfectbogus.binaryTrees.identicalProblem.Iterative;
-import dev.perfectbogus.binaryTrees.identicalProblem.Node;
+import dev.perfectbogus.binaryTrees.Node;
 import dev.perfectbogus.binaryTrees.identicalProblem.Recursive;
 import dev.perfectbogus.binaryTrees.identicalProblem.Solution;
 import org.junit.jupiter.api.Test;

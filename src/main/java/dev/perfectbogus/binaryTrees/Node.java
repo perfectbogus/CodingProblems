@@ -1,4 +1,4 @@
-package dev.perfectbogus.binaryTrees.identicalProblem;
+package dev.perfectbogus.binaryTrees;
 
 public class Node {
     private final int key;
